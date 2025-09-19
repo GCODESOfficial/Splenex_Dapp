@@ -1,103 +1,140 @@
+/* app/page.tsx */
+"use client";
+
 import Image from "next/image";
 
-export default function Home() {
+export default function Page() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="bg-black text-white min-h-screen px-4 md:px-12 py-10">
+      {/* Hero */}
+      <h1 className="text-center text-xl md:text-2xl font-medium mb-8">
+        Join thousands of traders powering the future of cross-chain liquidity
+      </h1>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      {/* Stats Row */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-10">
+        <div className="bg-[#0C0C0C] p-6 text-center">
+          <p className="text-2xl font-bold">$0.0571</p>
+          <p className="text-sm text-gray-400">SPX Token Price</p>
+        </div>
+        <div className="bg-[#0C0C0C] p-6 text-center">
+          <p className="text-2xl font-bold">40+</p>
+          <p className="text-sm text-gray-400">Active Networks</p>
+        </div>
+        <div className="bg-[#0C0C0C] p-6 text-center">
+          <p className="text-2xl font-bold">$1,482,210</p>
+          <p className="text-sm text-gray-400">Trading Volume (24h)</p>
+        </div>
+        <div className="bg-[#0C0C0C] p-6 text-center">
+          <p className="text-2xl font-bold">$35,000</p>
+          <p className="text-sm text-gray-400">Total Value Locked (TVL)</p>
+        </div>
+      </div>
+
+      {/* Supported Chains */}
+      <h2 className="text-sm mb-3">Supported Chains</h2>
+      <div className="flex flex-wrap gap-3 mb-10">
+        {[
+          "ethereum",
+          "solana",
+          "bnb",
+          "arbitrum",
+          "avalanche",
+          "polygon",
+          "tron",
+          "stellar",
+          "base",
+          "optimism",
+          "cosmos",
+          "avail",
+          "polkadot",
+        ].map((chain) => (
+          <div
+            key={chain}
+            className="bg-[#0C0C0C] px-4 py-2 rounded-md flex items-center justify-center"
           >
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
+              src={`/images/${chain}.svg`}
+              alt={chain}
               width={20}
               height={20}
+              className="mr-2"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <span className="text-sm capitalize">{chain}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Charts Section */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        {/* Donut Chart (replace with chart lib later) */}
+        <div className="bg-[#0C0C0C] p-6 flex flex-col items-center justify-center">
+          <div className="relative w-60 h-60 rounded-full border-[30px] border-yellow-400 flex items-center justify-center">
+            <span className="text-xl font-bold">$1,482,210</span>
+          </div>
+          <div className="mt-6 text-left">
+            <h3 className="text-yellow-400 font-semibold mb-2">
+              Splenex Revenue
+            </h3>
+            <ul className="space-y-1 text-sm text-gray-300">
+              <li>▉ Cross-Chain Swap</li>
+              <li>▉ Cross-Market Swap</li>
+              <li>▉ sFund DAO Stakers</li>
+              <li>▉ sNFT</li>
+            </ul>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        {/* Line Chart (static placeholder) */}
+        <div className="bg-[#0C0C0C] p-6">
+          <h3 className="mb-4">Analysis</h3>
+          <div className="w-full h-60 bg-black border border-gray-800 flex items-center justify-center">
+            {/* Replace with chart library */}
+            <span className="text-gray-500 text-sm">[Line Chart Here]</span>
+          </div>
+          {/* Tabs */}
+          <div className="flex gap-3 mt-4">
+            {["1D", "3D", "1W", "1M", "3M", "All Time"].map((tab, i) => (
+              <button
+                key={i}
+                className={`px-3 py-1 border text-xs ${
+                  tab === "3D"
+                    ? "bg-yellow-400 text-black border-yellow-400"
+                    : "border-gray-700 text-gray-300"
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* AMM Section */}
+      <h2 className="text-sm mb-3">Automated Market Makers Section</h2>
+      <p className="text-xs text-gray-400 mb-4">
+        Splenex AMMs ensure optimal pricing and deep liquidity across chains — so
+        every trade is fast, fair, and efficient.
+      </p>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        {[
+          "Uniswap",
+          "Balancer",
+          "Pancake Swap",
+          "Trader Joe",
+          "Sushiswap",
+          "Curve Finance",
+          "Raydium",
+          "Sushiswap2",
+        ].map((amm) => (
+          <div
+            key={amm}
+            className="bg-[#0C0C0C] px-4 py-2 rounded-md flex items-center justify-center"
+          >
+            <span className="text-sm">{amm}</span>
+          </div>
+        ))}
+      </div>
+    </main>
   );
 }
