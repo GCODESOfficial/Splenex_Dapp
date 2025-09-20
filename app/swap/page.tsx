@@ -15,10 +15,10 @@ export default function Swap() {
     <div className="min-h-screen flex flex-col items-center justify-center bg-black pt-32">
       {/* Tabs on Top */}
       <div className="flex mb-3">
-        <button className="bg-[#FFD600] text-black px-6 py-2 font-semibold">
+        <button className="bg-[#FFD600] text-black px-6 py-2 font-semibold font-general-sans text-base md:text-lg">
           Crypto
         </button>
-        <button className="bg-black text-white border border-[#FFD600] px-6 py-2 font-semibold">
+        <button className="bg-black text-white border border-[#FFD600] px-6 py-2 font-semibold font-general-sans text-base md:text-lg">
           Forex/Stocks
         </button>
       </div>
@@ -32,8 +32,8 @@ export default function Swap() {
         <div className="bg-[#121212] flex flex-col md:flex-row md:items-center md:justify-between mb-3 md:mb-0 py-3 px-6">
           <h2 className="text-lg font-bold font-satoshi mb-2 md:mb-0">Swap Tokens</h2>
           <div className="flex gap-2">
-            <button className="bg-[#1F1F1F] text-[#B1B1B1] font-medium font-general-sans px-3 py-2 text-sm">👁 Chart View</button>
-            <button className="bg-[#1F1F1F] text-[#B1B1B1] px-3 py-2 text-sm">⚙</button>
+            <button className="cursor-pointer bg-[#1F1F1F] text-[#B1B1B1] font-medium font-general-sans px-3 py-2 text-sm">👁 Chart View</button>
+            <button className="cursor-pointer bg-[#1F1F1F] text-[#B1B1B1] px-3 py-2 text-sm">⚙</button>
           </div>
         </div>
 
@@ -77,7 +77,7 @@ export default function Swap() {
                   placeholder="0"
                   className="bg-transparent md:w-1/2 text-2xl outline-none flex-1 w-full font-general-sans font-medium"
                 />
-                <button className="flex justify-between items-center gap-2 bg-[#191919] border border-[#242424] w-full md:w-auto px-3 py-2 order-first md:order-last">
+                <button className="cursor-pointer flex justify-between items-center gap-2 bg-[#191919] border border-[#242424] w-full md:w-auto px-3 py-2 order-first md:order-last">
                   <span className="text-[#EDEDED] font-general-sans font-semibold text-[10px]">ETH</span>
                   <ChevronDown size={16} />
                 </button>
@@ -103,7 +103,7 @@ export default function Swap() {
                   placeholder="0"
                   className="bg-transparent md:w-1/2 text-2xl outline-none flex-1 w-full font-general-sans font-medium"
                 />
-                <button className="bg-gradient-to-r from-[#F3DA5F] from-0% to-[#FCD404] to-63% text-[#0B0B0C] text-xs md:text-sm w-full md:w-auto px-3 py-2 font-general-sans font-semibold order-first md:order-last">
+                <button className="cursor-pointer bg-gradient-to-r from-[#F3DA5F] from-0% to-[#FCD404] to-63% text-[#0B0B0C] text-xs md:text-sm w-full md:w-auto px-3 py-2 font-general-sans font-semibold order-first md:order-last">
                   Select Token
                 </button>
               </div>

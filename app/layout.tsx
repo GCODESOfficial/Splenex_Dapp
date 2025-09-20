@@ -24,7 +24,7 @@ export default function RootLayout({
         {/* Sidebar + Main in one row */}
          <Navbar />
         <div className="flex min-h-screen gap-5">
-          {/* <Sidebar /> */}
+          <Sidebar />
           <div className="flex-1  text-white overflow-y-auto">
             {children}
           </div>
