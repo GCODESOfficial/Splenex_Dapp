@@ -4,11 +4,14 @@
 
 import { useState } from "react";
 import { ChevronDown, ArrowDown } from "lucide-react";
+import ChainSelectionModal from '@/components/ChainWalletSelectionModal';
 
 export default function Swap() {
   const [activeTab, setActiveTab] = useState<"Spot" | "Limit" | "Perp">("Spot");
+ const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
+    <>
     <div className="min-h-screen flex flex-col items-center justify-center bg-black pt-32">
       {/* Tabs on Top */}
       <div className="flex mb-3">
@@ -107,7 +110,7 @@ export default function Swap() {
             </div>
 
             {/* Connect Button */}
-            <button className="w-full bg-gradient-to-r from-[#F3DA5F] from-0% to-[#FCD404] to-63% text-[#0B0B0C] text-sm py-2 font-general-sans font-semibold">
+            <button onClick={() => setIsModalOpen(true)} className="cursor-pointer w-full bg-gradient-to-r from-[#F3DA5F] from-0% to-[#FCD404] to-63% text-[#0B0B0C] text-sm py-2 font-general-sans font-semibold">
               Connect
             </button>
           </div>
@@ -120,8 +123,16 @@ export default function Swap() {
 
 
       </div>
+
       {/* bottom yellow bar */}
       <div className="bg-[#FED402] p-2 md:p-3 w-[350px]"></div>
     </div>
+
+       <ChainSelectionModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
+    </>
   );
 }
+
